@@ -18,7 +18,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class UsersCabinetController implements Initializable {
-    User user = SignInController.user;
+    public static User user = SignInController.user;
     @FXML
     private Text setNameOfClient;
 
@@ -35,5 +35,18 @@ public class UsersCabinetController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setNameOfClient.setText(user.getName() + " " +user.getLastName());
+    }
+
+    public void takeCredit(ActionEvent actionEvent) throws IOException {
+        Stage stage = ((Stage) ((Node) actionEvent.getSource()).getScene().getWindow());
+        stage.setTitle("Меню взятия кредита");
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../views/TakeCreditView.fxml"));
+        Parent root = loader.load();
+        TakeCreditController controller = loader.getController();
+        stage.setScene(new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight()));
+    }
+
+    public void showCredit(ActionEvent actionEvent) {
     }
 }
