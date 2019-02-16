@@ -12,5 +12,4 @@ import java.util.ResourceBundle;
 
 public class UsersCabinetController {
     User user = SignInController.user;
-
 }

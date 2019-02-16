@@ -31,7 +31,7 @@ public class UsersRepositories {
             int salary = Integer.parseInt(info[9]);
             String phoneNumber = info[10];
             String creditTarget = info[11];
-            users.add(new User(hashCode, login, password, name, lastName, surName, bDate, citizen, city, salary, creditTarget, phoneNumber));
+            users.add(new User(hashCode, login, password, name, lastName, surName, bDate, citizen, city, salary, phoneNumber, creditTarget));
         }
         return users;
     }
@@ -66,7 +66,7 @@ public class UsersRepositories {
     public static void write(User model) throws IOException {
         FileWriter writer = new FileWriter("src/sample/repositories/allUsers.txt", true);
         BufferedWriter bufferWriter = new BufferedWriter(writer);
-        bufferWriter.write(model.toString());
+        bufferWriter.write("\n" + model.toString());
         bufferWriter.close();
     }
 }

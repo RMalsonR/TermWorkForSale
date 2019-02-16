@@ -18,10 +18,10 @@ public class User {
     public String toString() {
         return hashCode + " " + login + " " + password + " " +
                 name+ " " + lastName+ " "  + surName+ " " + bDate+ " " + citizen+ " " +
-                city+ " " + salary+ " " + creditTarget+ " " + phoneNumber;
+                city+ " " + salary+ " " + phoneNumber+ " " + creditTarget;
     }
 
-    public User(int hashCode, String login, String password, String name, String lastName, String surName, String bDate, String citizen, String city,  int salary, String creditTarget, String phoneNumber) {
+    public User(int hashCode, String login, String password, String name, String lastName, String surName, String bDate, String citizen, String city,  int salary, String phoneNumber, String creditTarget) {
         this.hashCode = hashCode;
         this.login = login;
         this.password = password;
