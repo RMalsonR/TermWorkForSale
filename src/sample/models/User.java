@@ -1,6 +1,7 @@
 package sample.models;
 
 public class User {
+    int hashCode;
     String login;
     String password;
     String name;
@@ -12,8 +13,17 @@ public class User {
     String adress;
     String salary;
     String creditTarget;
+    String phoneNumber;
 
-    public User(String login, String password, String name, String lastName, String surName, String bDate, String citizen, String city, String adress, String salary, String creditTarget) {
+    @Override
+    public String toString() {
+        return hashCode + " " + login + " " + password + " " +
+                name+ " " + lastName+ " "  + surName+ " " + bDate+ " " + citizen+ " " +
+                city+ " " + adress+ " " + salary+ " " + creditTarget+ " " + phoneNumber;
+    }
+
+    public User(int hashCode, String login, String password, String name, String lastName, String surName, String bDate, String citizen, String city, String adress, String salary, String creditTarget, String phoneNumber) {
+        this.hashCode = hashCode;
         this.login = login;
         this.password = password;
         this.name = name;
@@ -25,6 +35,22 @@ public class User {
         this.adress = adress;
         this.salary = salary;
         this.creditTarget = creditTarget;
+        this.phoneNumber = phoneNumber;
+    }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public int getHashCode() {
+        return hashCode;
+    }
+
+    public void setHashCode(int hashCode) {
+        this.hashCode = hashCode;
     }
 
     public String getLogin() {
