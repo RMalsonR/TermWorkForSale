@@ -41,8 +41,10 @@ public class UsersRepositories {
         ArrayList<User> allUsers = getAllUsers();
         User returnedUser = null;
         for (int i=0; i< allUsers.size();i++){
-            if(allUsers.get(i).getLogin().equals(login))
-                return returnedUser=allUsers.get(i);
+            if(allUsers.get(i).getLogin().equals(login)) {
+                returnedUser = allUsers.get(i);
+                break;
+            }
         }
         return returnedUser;
     }
