@@ -21,7 +21,7 @@
       <AnchorPane prefHeight="600.0" prefWidth="1000.0">
          <children>
             <TextField fx:id="loginField" layoutX="234.0" layoutY="166.0" prefHeight="57.0" prefWidth="532.0" promptText="Логин" />
-            <Button id="authButton" layoutX="644.0" layoutY="369.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="122.0" text="Войти" />
+            <Button id="authButton" layoutX="644.0" layoutY="369.0" mnemonicParsing="false" onAction="#btnSignIn" prefHeight="57.0" prefWidth="122.0" text="Войти" />
             <Button id="regButton" layoutX="234.0" layoutY="369.0" mnemonicParsing="false" onAction="#registrationBtnAction" prefHeight="57.0" prefWidth="122.0" text="Регистрация" />
             <Text layoutX="378.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Банк Агент" wrappingWidth="244.6708984375">
                <font>

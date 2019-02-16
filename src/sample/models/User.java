@@ -10,8 +10,7 @@ public class User {
     String bDate;
     String citizen;
     String city;
-    String adress;
-    String salary;
+    int salary;
     String creditTarget;
     String phoneNumber;
 
@@ -19,10 +18,10 @@ public class User {
     public String toString() {
         return hashCode + " " + login + " " + password + " " +
                 name+ " " + lastName+ " "  + surName+ " " + bDate+ " " + citizen+ " " +
-                city+ " " + adress+ " " + salary+ " " + creditTarget+ " " + phoneNumber;
+                city+ " " + salary+ " " + creditTarget+ " " + phoneNumber;
     }
 
-    public User(int hashCode, String login, String password, String name, String lastName, String surName, String bDate, String citizen, String city, String adress, String salary, String creditTarget, String phoneNumber) {
+    public User(int hashCode, String login, String password, String name, String lastName, String surName, String bDate, String citizen, String city,  int salary, String creditTarget, String phoneNumber) {
         this.hashCode = hashCode;
         this.login = login;
         this.password = password;
@@ -32,7 +31,6 @@ public class User {
         this.bDate = bDate;
         this.citizen = citizen;
         this.city = city;
-        this.adress = adress;
         this.salary = salary;
         this.creditTarget = creditTarget;
         this.phoneNumber = phoneNumber;
@@ -117,19 +115,11 @@ public class User {
         this.city = city;
     }
 
-    public String getAdress() {
-        return adress;
-    }
-
-    public void setAdress(String adress) {
-        this.adress = adress;
-    }
-
-    public String getSalary() {
+    public int getSalary() {
         return salary;
     }
 
-    public void setSalary(String salary) {
+    public void setSalary(int salary) {
         this.salary = salary;
     }
 
