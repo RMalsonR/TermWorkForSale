@@ -4,8 +4,8 @@ public class User {
     String login;
     String password;
     String name;
-    String lastname; // Отчество
-    String surname;  // Фамилия
+    String lastName; // Отчество
+    String surName;  // Фамилия
     String bDate;
     String citizen;
     String city;
@@ -13,12 +13,12 @@ public class User {
     String salary;
     String creditTarget;
 
-    public User(String login, String password, String name, String lastname, String surname, String bDate, String citizen, String city, String adress, String salary, String creditTarget) {
+    public User(String login, String password, String name, String lastName, String surName, String bDate, String citizen, String city, String adress, String salary, String creditTarget) {
         this.login = login;
         this.password = password;
         this.name = name;
-        this.lastname = lastname;
-        this.surname = surname;
+        this.lastName = lastName;
+        this.surName = surName;
         this.bDate = bDate;
         this.citizen = citizen;
         this.city = city;
@@ -51,20 +51,20 @@ public class User {
         this.name = name;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getSurName() {
+        return surName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setSurName(String surName) {
+        this.surName = surName;
     }
 
     public String getbDate() {
