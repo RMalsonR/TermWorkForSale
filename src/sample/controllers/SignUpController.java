@@ -9,23 +9,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class SignUpController {
-
-    @FXML
-    final ComboBox<String> comboCitizen = new ComboBox<>(FXCollections.observableArrayList(
-            "Российская Федерация", "Страны СНГ", "Другие страны"));
-
-//    {
-//        ObservableList<String> listCitizen = FXCollections.observableArrayList(
-//                "Российская Федерация", "Страны СНГ", "Другие страны");
-//        comboCitizen = new ComboBox<>(listCitizen);
-//        comboCitizen.setValue("Российская Федерация");
-//    }
 
     public void helpPhoneBtnAction(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
