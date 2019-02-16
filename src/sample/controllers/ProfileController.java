@@ -15,8 +15,6 @@ import sample.models.User;
 import sample.repositories.UsersRepositories;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class ProfileController{
 

@@ -34,16 +34,6 @@ public class UsersCabinetController {
         stage.setScene(new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight()));
     }
 
-    public void takeCredit(ActionEvent actionEvent) throws IOException {
-        Stage stage = ((Stage) ((Node) actionEvent.getSource()).getScene().getWindow());
-        stage.setTitle("Меню взятия кредита");
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../views/TakeCreditView.fxml"));
-        Parent root = loader.load();
-        TakeCreditController controller = loader.getController();
-        stage.setScene(new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight()));
-    }
-
     public void showCredit(ActionEvent actionEvent) throws IOException {
         User user = UsersRepositories.getUserByLogin(setNameOfClient.getText());
         Stage stage = ((Stage) ((Node) actionEvent.getSource()).getScene().getWindow());
@@ -59,4 +49,15 @@ public class UsersCabinetController {
         stage.setScene(new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight()));
     }
 
+
+    public void getCreditActionBtn(ActionEvent actionEvent) throws IOException {
+        Stage stage = ((Stage) ((Node) actionEvent.getSource()).getScene().getWindow());
+        stage.setTitle("Оформление");
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../views/GetCreditView.fxml"));
+        Parent root = loader.load();
+        GetCreditController controller = loader.getController();
+        controller.loginLabel.setText(setNameOfClient.getText());
+        stage.setScene(new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight()));
+    }
 }

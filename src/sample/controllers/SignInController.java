@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class SignInController {
-    //    public static User user;
     @FXML
     private TextField loginField;
 
@@ -70,9 +69,8 @@ public class SignInController {
                 UsersCabinetController controller = loader.getController();
                 stage.setScene(new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight()));
 
-//                controller.user = allUsers.get(i);
                 controller.setNameOfClient.setText(allUsers.get(i).getLogin());
-//                controller.user = user;
+
                 cheker = true;
             }
         }

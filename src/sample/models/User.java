@@ -16,14 +16,15 @@ public class User {
 
     private Credit credit;
 
+
     @Override
     public String toString() {
         return hashCode + " " + login + " " + password + " " +
-                name+ " " + lastName+ " "  + surName+ " " + bDate+ " " + citizen+ " " +
-                city+ " " + salary+ " " + phoneNumber+ " " + creditTarget;
+                name + " " + lastName + " " + surName + " " + bDate + " " + citizen + " " +
+                city + " " + salary + " " + phoneNumber + " " + creditTarget;
     }
 
-    public User(int hashCode, String login, String password, String name, String lastName, String surName, String bDate, String citizen, String city,  int salary, String phoneNumber, String creditTarget) {
+    public User(int hashCode, String login, String password, String name, String lastName, String surName, String bDate, String citizen, String city, int salary, String phoneNumber, String creditTarget) {
         this.hashCode = hashCode;
         this.login = login;
         this.password = password;
