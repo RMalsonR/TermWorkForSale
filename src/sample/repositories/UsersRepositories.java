@@ -18,7 +18,7 @@ public class UsersRepositories {
         String line;
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
         while ((line = reader.readLine()) != null) {
-            String[] info = line.split(" ", 12);
+            String[] info = line.split(" ");
             int hashCode = Integer.parseInt(info[0]);
             String login = info[1];
             String password = info[2];
@@ -36,11 +36,11 @@ public class UsersRepositories {
         return users;
     }
 
-    public static User getUserByLogin(String login) throws IOException{
+    public static User getUserByLogin(String login) throws IOException {
         ArrayList<User> allUsers = getAllUsers();
         User returnedUser = null;
-        for (int i=0; i< allUsers.size();i++){
-            if(allUsers.get(i).getLogin().equals(login)) {
+        for (int i = 0; i < allUsers.size(); i++) {
+            if (allUsers.get(i).getLogin().equals(login)) {
                 returnedUser = allUsers.get(i);
                 break;
             }
@@ -53,7 +53,7 @@ public class UsersRepositories {
         List<String> fileContent = new ArrayList<>(Files.readAllLines(path));
         String userToString = model.toString();
         for (int i = 0; i < fileContent.size(); i++) {
-            String[] info = fileContent.get(i).split(" ", 12);
+            String[] info = fileContent.get(i).split(" ");
             if (info[0].equals(model.getHashCode())) {
                 fileContent.set(i, userToString);
                 break;
@@ -68,5 +68,27 @@ public class UsersRepositories {
         BufferedWriter bufferWriter = new BufferedWriter(writer);
         bufferWriter.write("\n" + model.toString());
         bufferWriter.close();
+    }
+
+    public static void writeCreditHistory(User model) throws IOException {
+        FileWriter writer = new FileWriter("src/sample/repositories/creditsFiles.txt", true);
+        BufferedWriter bufferWriter = new BufferedWriter(writer);
+        bufferWriter.write("\n" + model.getHashCode());
+        bufferWriter.flush();
+        bufferWriter.close();
+    }
+
+    public static boolean checkCreditHistory(User model) throws IOException {
+        File file = new File("src/sample/repositories/creditsFiles.txt");
+        String line;
+        boolean result = false;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+        while ((line = reader.readLine()) != null) {
+            if (line != null){
+                int value = Integer.parseInt(line);
+                if (value == model.getHashCode()) result = true;
+            }
+        }
+        return result;
     }
 }

@@ -13,15 +13,24 @@ public class User {
     int salary;
     String creditTarget;
     String phoneNumber;
+    private Credit credit;
+
+    public Credit getCredit() {
+        return credit;
+    }
+
+    public void setCredit(Credit credit) {
+        this.credit = credit;
+    }
 
     @Override
     public String toString() {
         return hashCode + " " + login + " " + password + " " +
-                name+ " " + lastName+ " "  + surName+ " " + bDate+ " " + citizen+ " " +
-                city+ " " + salary+ " " + phoneNumber+ " " + creditTarget;
+                name + " " + lastName + " " + surName + " " + bDate + " " + citizen + " " +
+                city + " " + salary + " " + phoneNumber + " " + creditTarget;
     }
 
-    public User(int hashCode, String login, String password, String name, String lastName, String surName, String bDate, String citizen, String city,  int salary, String phoneNumber, String creditTarget) {
+    public User(int hashCode, String login, String password, String name, String lastName, String surName, String bDate, String citizen, String city, int salary, String phoneNumber, String creditTarget) {
         this.hashCode = hashCode;
         this.login = login;
         this.password = password;
@@ -35,6 +44,7 @@ public class User {
         this.creditTarget = creditTarget;
         this.phoneNumber = phoneNumber;
     }
+
     public String getPhoneNumber() {
         return phoneNumber;
     }

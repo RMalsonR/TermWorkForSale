@@ -11,6 +11,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import sample.models.User;
 import sample.controllers.SignInController;
+import sample.repositories.UsersRepositories;
 
 import java.awt.*;
 import java.io.IOException;
@@ -33,8 +34,20 @@ public class UsersCabinetController{
         stage.setScene(new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight()));
     }
 
-//    @Override
-//    public void initialize(URL location, ResourceBundle resources) {
-//        setNameOfClient.setText(user.getName() + " " +user.getLastName());
-//    }
+
+
+    public void profileActionBtn(ActionEvent actionEvent) {
+
+    }
+
+    public void getCreditActionBtn(ActionEvent actionEvent) throws IOException {
+        Stage stage = ((Stage) ((Node) actionEvent.getSource()).getScene().getWindow());
+        stage.setTitle("Оформление");
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../views/GetCreditView.fxml"));
+        Parent root = loader.load();
+        GetCreditController controller = loader.getController();
+        controller.loginLabel.setText(setNameOfClient.getText());
+        stage.setScene(new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight()));
+    }
 }
