@@ -69,4 +69,11 @@ public class UsersRepositories {
         bufferWriter.write("\n" + model.toString());
         bufferWriter.close();
     }
+
+    public static void writeCreditHistory(User model) throws IOException{
+        FileWriter writer = new FileWriter("src/sample/repositories/creditsFiles.txt", true);
+        BufferedWriter bufferWriter = new BufferedWriter(writer);
+        bufferWriter.write("\n" + model.getHashCode());
+        bufferWriter.close();
+    }
 }
