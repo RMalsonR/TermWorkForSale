@@ -17,11 +17,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class UsersCabinetController implements Initializable {
-    User user = SignInController.user;
+public class UsersCabinetController{
+    User user;
 
     @FXML
-    private Text setNameOfClient;
+    public Text setNameOfClient;
 
     public void cancelBtn(ActionEvent actionEvent) throws IOException {
         Stage stage = ((Stage) ((Node) actionEvent.getSource()).getScene().getWindow());
@@ -33,8 +33,8 @@ public class UsersCabinetController implements Initializable {
         stage.setScene(new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight()));
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        setNameOfClient.setText(user.getName() + " " +user.getLastName());
-    }
+//    @Override
+//    public void initialize(URL location, ResourceBundle resources) {
+//        setNameOfClient.setText(user.getName() + " " +user.getLastName());
+//    }
 }
