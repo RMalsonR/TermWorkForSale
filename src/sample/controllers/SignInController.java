@@ -11,12 +11,14 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import sample.models.Credit;
 import sample.models.User;
 import sample.repositories.UsersRepositories;
 import sample.repositories.UsersRepositories;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class SignInController {
     //    public static User user;

@@ -1,2 +1,2 @@
-12323233 Java sharp Renat Anton Karim 1990-08-30 РФ Казань 60000 891754525 Бизнес
-123839586 test test NAME LASTNAME SURNAME 1990-12-12 РФ Kazan 50000 купить хуй 79000000
+12323233 Java sharp Anton Karim Renat 1990-08-30 РФ Казань 99 891754525 Машина
+123839586 admin admin LASTNAME SURNAME NAME 1990-12-12 РФ Kazan 100 790000 Купить Карима

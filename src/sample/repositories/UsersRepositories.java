@@ -2,6 +2,7 @@ package sample.repositories;
 
 import sample.models.User;
 
+import java.beans.IntrospectionException;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystems;
@@ -33,6 +34,7 @@ public class UsersRepositories {
             String creditTarget = info[11];
             users.add(new User(hashCode, login, password, name, lastName, surName, bDate, citizen, city, salary, phoneNumber, creditTarget));
         }
+        reader.close();
         return users;
     }
 
@@ -49,18 +51,27 @@ public class UsersRepositories {
     }
 
     public static void update(User model) throws IOException {
-        Path path = Paths.get("allUsers.txt");
-        List<String> fileContent = new ArrayList<>(Files.readAllLines(path));
-        String userToString = model.toString();
-        for (int i = 0; i < fileContent.size(); i++) {
-            String[] info = fileContent.get(i).split(" ", 12);
-            if (info[0].equals(model.getHashCode())) {
-                fileContent.set(i, userToString);
+        ArrayList<User> users = getAllUsers();
+        File file = new File("src/sample/repositories/allUsers.txt");
+        String line;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+        int count = 0;
+        while ((line = reader.readLine()) != null) {
+            String[] info = line.split(" ");
+            int value = Integer.parseInt(info[0]);
+            if(value == model.getHashCode()){
+                users.remove(count);
+                users.add(model);
                 break;
             }
+            count++;
         }
-
-        Files.write(path, fileContent);
+        reader.close();
+        FileWriter fileWriter = new FileWriter(file, false);
+        for(User writeUsers : users){
+            fileWriter.write(writeUsers.toString()+"\n");
+        }
+        fileWriter.close();
     }
 
     public static void write(User model) throws IOException {
@@ -74,6 +85,19 @@ public class UsersRepositories {
         FileWriter writer = new FileWriter("src/sample/repositories/creditsFiles.txt", true);
         BufferedWriter bufferWriter = new BufferedWriter(writer);
         bufferWriter.write("\n" + model.getHashCode());
+        bufferWriter.flush();
         bufferWriter.close();
+    }
+
+    public static boolean checkCreditHistory(User model) throws IOException{
+        File file = new File("src/sample/repositories/creditsFiles.txt");
+        String line;
+        boolean result = false;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+        while ((line = reader.readLine()) != null) {
+            int value = Integer.parseInt(line);
+            if(value == model.getHashCode()) result = true;
+        }
+        return result;
     }
 }

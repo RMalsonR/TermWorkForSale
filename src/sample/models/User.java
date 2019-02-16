@@ -1,18 +1,20 @@
 package sample.models;
 
 public class User {
-    int hashCode;
-    String login;
-    String password;
-    String name;
-    String lastName; // Отчество
-    String surName;  // Фамилия
-    String bDate;
-    String citizen;
-    String city;
-    int salary;
-    String creditTarget;
-    String phoneNumber;
+    private int hashCode;
+    private String login;
+    private String password;
+    private String name;
+    private String lastName; // Отчество
+    private String surName;  // Фамилия
+    private String bDate;
+    private String citizen;
+    private String city;
+    private int salary;
+    private String creditTarget;
+    private String phoneNumber;
+
+    private Credit credit;
 
     @Override
     public String toString() {
@@ -35,6 +37,15 @@ public class User {
         this.creditTarget = creditTarget;
         this.phoneNumber = phoneNumber;
     }
+
+    public Credit getCredit() {
+        return credit;
+    }
+
+    public void setCredit(Credit credit) {
+        this.credit = credit;
+    }
+
     public String getPhoneNumber() {
         return phoneNumber;
     }

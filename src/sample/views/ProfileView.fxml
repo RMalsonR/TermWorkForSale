@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ProfileController">
+   <children>
+      <Button layoutX="856.0" layoutY="45.0" mnemonicParsing="false" onAction="#backButcton" prefHeight="45.0" prefWidth="60.0" text="&lt;" />
+      <Text layoutX="67.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Мой кредит">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <Text layoutX="67.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Изменить мои данные:">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <TextField fx:id="loginField" alignment="CENTER" layoutX="67.0" layoutY="228.0" prefHeight="77.0" prefWidth="188.0" promptText="Логин">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="passwordField" alignment="CENTER" layoutX="312.0" layoutY="228.0" prefHeight="77.0" prefWidth="188.0" promptText="Пароль">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="targerField" alignment="CENTER" layoutX="67.0" layoutY="333.0" prefHeight="77.0" prefWidth="188.0" promptText="Цель Кредита">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="salaryField" alignment="CENTER" layoutX="312.0" layoutY="333.0" prefHeight="77.0" prefWidth="188.0" promptText="Зарплата">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </TextField>
+      <Button layoutX="616.0" layoutY="277.0" mnemonicParsing="false" onAction="#changeButton" prefHeight="85.0" prefWidth="188.0" text="Изменить">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Button>
+      <Label fx:id="userLogin" layoutX="389.0" layoutY="35.0" prefHeight="37.0" prefWidth="256.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="creditText" layoutX="237.0" layoutY="99.0" prefHeight="77.0" prefWidth="613.0" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

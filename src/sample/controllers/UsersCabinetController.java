@@ -11,6 +11,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import sample.models.User;
 import sample.controllers.SignInController;
+import sample.repositories.UsersRepositories;
 
 import java.awt.*;
 import java.io.IOException;
@@ -18,8 +19,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class UsersCabinetController{
-    User user;
+public class UsersCabinetController {
 
     @FXML
     public Text setNameOfClient;
@@ -44,7 +44,19 @@ public class UsersCabinetController{
         stage.setScene(new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight()));
     }
 
-    public void showCredit(ActionEvent actionEvent) {
+    public void showCredit(ActionEvent actionEvent) throws IOException {
+        User user = UsersRepositories.getUserByLogin(setNameOfClient.getText());
+        Stage stage = ((Stage) ((Node) actionEvent.getSource()).getScene().getWindow());
+        stage.setTitle("Мои данные и кредиты");
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../views/ProfileView.fxml"));
+        Parent root = loader.load();
+        ProfileController controller = loader.getController();
+        controller.userLogin.setText(setNameOfClient.getText());
+        if (user.getCredit() != null) {
+            controller.creditText.setText(user.getCredit().toString());
+        }
+        stage.setScene(new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight()));
     }
 
 }
