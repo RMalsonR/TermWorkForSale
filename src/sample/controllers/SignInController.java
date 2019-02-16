@@ -11,11 +11,15 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import sample.models.User;
+import sample.repositories.UsersRepositories;
+import sample.repositories.UsersRepositories;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class SignInController {
-
+    public static User user;
     @FXML
     private TextField loginField;
 
@@ -41,4 +45,31 @@ public class SignInController {
             stage.setScene(new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight()));
     }
 
+    private void loginAndPasswordExeption(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Ошибка");
+        alert.setHeaderText("Пользователь не найден");
+        alert.setContentText("Проверьте введённые Вами данные.");
+        alert.showAndWait();
+    }
+
+    public void btnSignIn(ActionEvent actionEvent) throws IOException {
+        ArrayList<User> allUsers = UsersRepositories.getAllUsers();
+        boolean cheker = false;
+        int i;
+        for(i=0; i< allUsers.size(); i++){
+            if (loginField.getText().equals(allUsers.get(i).getLogin()) && passwordField.getText().equals(allUsers.get(i).getPassword())){
+                Stage stage = ((Stage) ((Node) actionEvent.getSource()).getScene().getWindow());
+                stage.setTitle("Личный кабинет");
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("../views/UsersCabinet.fxml"));
+                Parent root = loader.load();
+                UsersCabinetController controller = loader.getController();
+                stage.setScene(new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight()));
+                user = allUsers.get(i);
+                cheker = true;
+            }
+        }
+        if(!cheker) loginAndPasswordExeption();
+    }
 }
