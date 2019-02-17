@@ -111,7 +111,6 @@ public class SignUpController {
             alert.setHeaderText("Что-то пошло не так");
             alert.setContentText("Ошибка при регистрации");
             alert.showAndWait();
-            e.printStackTrace();
         }
         return null;
     }

@@ -52,7 +52,7 @@
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button fx:id="signUpBtn" layoutX="706.0" layoutY="485.0" mnemonicParsing="false" onAction="#signUpBtnAction" prefHeight="63.0" prefWidth="264.0" text="Зарагестрироваться">
+        <Button fx:id="signUpBtn" layoutX="706.0" layoutY="485.0" mnemonicParsing="false" onAction="#signUpBtnAction" prefHeight="63.0" prefWidth="264.0" text="Зарегистрироваться">
             <font>
                 <Font size="24.0" />
             </font>
