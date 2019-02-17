@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ProfileController">
+<AnchorPane prefHeight="601.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ProfileController">
    <children>
       <Button layoutX="856.0" layoutY="45.0" mnemonicParsing="false" onAction="#backButcton" prefHeight="45.0" prefWidth="60.0" text="&lt;" />
       <Text layoutX="67.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Мой кредит">
@@ -40,7 +40,7 @@
             <Font size="34.0" />
          </font>
       </TextField>
-      <Button layoutX="616.0" layoutY="277.0" mnemonicParsing="false" onAction="#changeButton" prefHeight="85.0" prefWidth="188.0" text="Изменить">
+      <Button layoutX="645.0" layoutY="274.0" mnemonicParsing="false" onAction="#changeButton" prefHeight="85.0" prefWidth="188.0" text="Изменить">
          <font>
             <Font size="29.0" />
          </font>
@@ -50,7 +50,7 @@
             <Font size="21.0" />
          </font>
       </Label>
-      <Label fx:id="creditText" layoutX="237.0" layoutY="99.0" prefHeight="77.0" prefWidth="613.0" wrapText="true">
+      <Label fx:id="creditText" layoutX="237.0" layoutY="99.0" prefHeight="45.0" prefWidth="569.0" wrapText="true">
          <font>
             <Font size="20.0" />
          </font>

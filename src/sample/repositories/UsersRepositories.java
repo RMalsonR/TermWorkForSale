@@ -84,9 +84,23 @@ public class UsersRepositories {
     public static void writeCreditHistory(User model) throws IOException {
         FileWriter writer = new FileWriter("src/sample/repositories/creditsFiles.txt", true);
         BufferedWriter bufferWriter = new BufferedWriter(writer);
-        bufferWriter.write("\n" + model.getHashCode());
+        bufferWriter.write(model.getHashCode() + " " + model.getCredit().toString() + "\n");
         bufferWriter.flush();
         bufferWriter.close();
+    }
+
+    public static String viewCreditHistory(User model) throws IOException{
+        File file = new File("src/sample/repositories/creditsFiles.txt");
+        String line;
+        String result="";
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+        while ((line = reader.readLine()) != null) {
+            String[] info = line.split(" ");
+            if(Integer.parseInt(info[0]) == model.getHashCode()){
+                result = "Сумма кредита: " + info[1] + "р. Срок: " + info[2] + " лет. Выплата в месяц: " + info[3] +"р.";
+            }
+        }
+        return result;
     }
 
     public static boolean checkCreditHistory(User model) throws IOException {
@@ -95,8 +109,11 @@ public class UsersRepositories {
         boolean result = false;
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
         while ((line = reader.readLine()) != null) {
-            int value = Integer.parseInt(line);
-            if (value == model.getHashCode()) result = true;
+            String[] info = line.split(" ");
+            if (line != null) {
+                int value = Integer.parseInt(info[0]);
+                if (value == model.getHashCode()) result = true;
+            }
         }
         return result;
     }

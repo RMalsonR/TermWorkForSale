@@ -39,18 +39,21 @@ public class ProfileController{
         loader.setLocation(getClass().getResource("../views/UsersCabinet.fxml"));
         Parent root = loader.load();
         UsersCabinetController controller = loader.getController();
+        controller.setNameOfClient.setText(userLogin.getText());
         stage.setScene(new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight()));
     }
 
     public void changeButton(ActionEvent actionEvent) throws IOException {
-        if(loginField!=null && passwordField!=null && targerField!=null && salaryField!=null){
-            User user = UsersRepositories.getUserByLogin(userLogin.getText());
-            user.setLogin(loginField.getText());
-            user.setPassword(passwordField.getText());
-            user.setCreditTarget(targerField.getText());
-            user.setSalary(Integer.parseInt(salaryField.getText()));
-            UsersRepositories.update(user);
-        } else {
+        try {
+            if(loginField.getText()!=null && passwordField.getText()!=null && targerField.getText()!=null && Integer.parseInt(salaryField.getText())!=0) {
+                User user = UsersRepositories.getUserByLogin(userLogin.getText());
+                user.setLogin(loginField.getText());
+                user.setPassword(passwordField.getText());
+                user.setCreditTarget(targerField.getText());
+                user.setSalary(Integer.parseInt(salaryField.getText()));
+                UsersRepositories.update(user);
+            }
+        } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Ошибка");
             alert.setHeaderText("Неверные данные.");

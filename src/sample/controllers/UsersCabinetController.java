@@ -43,8 +43,8 @@ public class UsersCabinetController {
         Parent root = loader.load();
         ProfileController controller = loader.getController();
         controller.userLogin.setText(setNameOfClient.getText());
-        if (user.getCredit() != null) {
-            controller.creditText.setText(user.getCredit().toString());
+        if (UsersRepositories.checkCreditHistory(user)) {
+            controller.creditText.setText(UsersRepositories.viewCreditHistory(user));
         }
         stage.setScene(new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight()));
     }

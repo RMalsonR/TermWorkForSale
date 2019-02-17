@@ -8,17 +8,17 @@
 <AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.UsersCabinetController">
    <children>
       <Button layoutX="870.0" layoutY="54.0" mnemonicParsing="false" onAction="#cancelBtn" prefHeight="40.0" prefWidth="65.0" text="&lt;" />
-      <Text layoutX="114.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Добро пожаловать," wrappingWidth="658.09521484375">
+      <Text layoutX="263.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Добро пожаловать," wrappingWidth="236.09521484375">
          <font>
             <Font size="26.0" />
          </font>
       </Text>
-      <Text fx:id="setNameOfClient" layoutX="354.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="111.0">
+      <Text fx:id="setNameOfClient" layoutX="515.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="111.0">
          <font>
             <Font size="26.0" />
          </font>
       </Text>
       <Button layoutX="570.0" layoutY="245.0" mnemonicParsing="false" onAction="#showCredit" prefHeight="145.0" prefWidth="300.0" text="Просмотреть мои кредиты" />
-      <Button layoutX="271.0" layoutY="254.0" mnemonicParsing="false" onAction="#getCreditActionBtn" prefHeight="92.0" prefWidth="167.0" text="Взять кредит" />
+      <Button layoutX="143.0" layoutY="245.0" mnemonicParsing="false" onAction="#getCreditActionBtn" prefHeight="145.0" prefWidth="300.0" text="Взять кредит" />
    </children>
 </AnchorPane>

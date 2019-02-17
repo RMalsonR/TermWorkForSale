@@ -13,7 +13,7 @@ public class Credit {
 
     @Override
     public String toString() {
-        return "Сумма: " + sum +". Срок: "+ date +". Выплата в месяц: "+ sumInMounth;
+        return sum + " " + date + " " + sumInMounth;
     }
 
     public int getSum() {

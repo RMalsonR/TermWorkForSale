@@ -32,7 +32,9 @@ public class GetCreditController {
             User user = UsersRepositories.getUserByLogin(loginLabel.getText());
             int countOfAge = Integer.parseInt(countOfAgeField.getText());
             int sumOfCredit = Integer.parseInt(sumOfreditField.getText());
-            int sumByMounth = (int) ((sumOfCredit + sumOfCredit * 0.1) / countOfAge) / 1;
+            int sumByMounth = (int) ((sumOfCredit + sumOfCredit * 0.1) / (countOfAge * 12));
+            String[] parseUser = user.getbDate().split("-");
+            int age = 2019 - Integer.parseInt(parseUser[0]);
 
             if (UsersRepositories.checkCreditHistory(user)){
                 getAlert("У вас уже имеется кредит");
@@ -40,9 +42,10 @@ public class GetCreditController {
                 return;
             }
 
-            if (sumByMounth <= user.getSalary()/2 && countOfAge <= 15){
-                Credit credit = new Credit(sumOfCredit, new Date().toString(), sumByMounth);
+            if (sumByMounth <= user.getSalary()/2 && countOfAge <= 15 && user.getCitizen().equals("РФ") && age > 21){
+                Credit credit = new Credit(sumOfCredit, String.valueOf(countOfAge), sumByMounth);
                 user.setCredit(credit);
+                System.out.println(user.getCredit().toString());
                 UsersRepositories.writeCreditHistory(user);
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Поздравляем!");
