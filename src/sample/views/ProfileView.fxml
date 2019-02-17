@@ -47,7 +47,7 @@
       </Button>
       <Label fx:id="userLogin" layoutX="389.0" layoutY="35.0" prefHeight="37.0" prefWidth="256.0">
          <font>
-            <Font size="21.0" />
+            <Font size="29.0" />
          </font>
       </Label>
       <Label fx:id="creditText" layoutX="237.0" layoutY="99.0" prefHeight="45.0" prefWidth="569.0" wrapText="true">
