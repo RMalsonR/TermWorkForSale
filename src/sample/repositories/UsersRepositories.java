@@ -19,7 +19,7 @@ public class UsersRepositories {
         String line;
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
         while ((line = reader.readLine()) != null) {
-            String[] info = line.split(" ");
+            String[] info = line.split(" ", 12);
             int hashCode = Integer.parseInt(info[0]);
             String login = info[1];
             String password = info[2];
@@ -57,7 +57,7 @@ public class UsersRepositories {
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
         int count = 0;
         while ((line = reader.readLine()) != null) {
-            String[] info = line.split(" ");
+            String[] info = line.split(" ", 12);
             int value = Integer.parseInt(info[0]);
             if (value == model.getHashCode()) {
                 users.remove(count);

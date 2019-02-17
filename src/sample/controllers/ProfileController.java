@@ -52,6 +52,12 @@ public class ProfileController{
                 user.setCreditTarget(targerField.getText());
                 user.setSalary(Integer.parseInt(salaryField.getText()));
                 UsersRepositories.update(user);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Успешно");
+                alert.setHeaderText("Поздравляем!");
+                alert.setContentText("Вы успешно изменили информацию о себе");
+                alert.showAndWait();
             }
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);

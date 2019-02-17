@@ -94,11 +94,11 @@ public class SignUpController {
             );
 
             UsersRepositories.write(newUser);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Успешно");
             alert.setHeaderText("Поздравляем!");
-            alert.setContentText("Вы были успешно зарегестрированы!");
+            alert.setContentText("Вы были успешно зарегистрированы!");
             alert.showAndWait();
 
             swapStage(actionEvent);
